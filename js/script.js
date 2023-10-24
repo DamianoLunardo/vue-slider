@@ -54,7 +54,13 @@ createApp({
             this.autoPlayInterval = setInterval(() => {
                 this.nextImage();
             }, 3000);
-        }
+        },
+        pauseAutoplay() {
+            clearInterval(this.autoPlayInterval);
+          },
+         resumeAutoplay() {
+            this.startAutoplay();
+         }
         
     }
 }).mount('#app')
