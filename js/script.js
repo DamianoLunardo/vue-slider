@@ -32,14 +32,14 @@ createApp({
     methods: {
         nextImage() {
             this.currentIndex++;
-            if (this.currentIndex > this.movie.images.length - 1) {
+            if (this.currentIndex > this.info.img.length - 1) {
                 this.currentIndex = 0;
             }
         },
         prevImage() {
             this.currentIndex--;
             if (this.currentIndex < 0) {
-                this.currentIndex = this.movie.images.length - 1;
+                this.currentIndex = this.info.img.length - 1;
             }
         },
         changeImage(thumbIndex) {
