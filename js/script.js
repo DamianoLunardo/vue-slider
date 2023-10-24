@@ -29,6 +29,10 @@ createApp({
             }
         }
     },
+    // viene eseguita quando l'istanza Vue è stata creata, ma prima che i metodi vengano eseguiti.
+    created() {
+        this.startAutoplay();
+    },
     methods: {
         nextImage() {
             this.currentIndex++;
@@ -45,6 +49,12 @@ createApp({
         changeImage(thumbIndex) {
             console.log("Ho cliccato sulla thumb ad indice ", thumbIndex)
             this.currentIndex = thumbIndex;
+        },
+        startAutoplay() {
+            this.autoPlayInterval = setInterval(() => {
+                this.nextImage();
+            }, 3000);
         }
+        
     }
 }).mount('#app')
